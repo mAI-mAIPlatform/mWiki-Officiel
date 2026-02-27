@@ -24,7 +24,7 @@ body { background-color: #020617; color: #f8fafc; overflow: hidden; height: 100v
 
 /* Sidebar */
 .sidebar { width: 300px; padding: 25px; display: flex; flex-direction: column; gap: 20px; overflow-y: auto; }
-.sidebar::-webkit-scrollbar { display: none; } /* Cache la scrollbar */
+.sidebar::-webkit-scrollbar { display: none; }
 .logo { font-size: 1.8rem; font-weight: 800; background: linear-gradient(90deg, #60a5fa, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
 /* Barre mSearch */
@@ -63,3 +63,38 @@ nav a.active { background: rgba(255, 255, 255, 0.12); color: #fff; font-weight: 
 }
 #doc-content code { font-family: 'Consolas', monospace; color: #38bdf8; font-size: 0.95rem; }
 #doc-content p code { background: rgba(0,0,0,0.3); padding: 3px 6px; border-radius: 6px; color: #f472b6; }
+
+/* =========================================
+   🔍 MODULE mSEARCH (MODALE)
+   ========================================= */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    display: flex; justify-content: center; align-items: flex-start; padding-top: 15vh;
+    z-index: 1000; opacity: 1; transition: opacity 0.2s ease;
+}
+.modal-overlay.hidden { opacity: 0; pointer-events: none; }
+
+.search-container { width: 600px; max-width: 90%; display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+
+#msearch-input {
+    width: 100%; background: transparent; border: none; padding: 25px;
+    font-size: 1.2rem; color: #fff; outline: none; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+#msearch-input::placeholder { color: #64748b; }
+
+.search-results { max-height: 400px; overflow-y: auto; padding: 10px; }
+.search-results::-webkit-scrollbar { display: none; }
+
+.result-item {
+    padding: 15px; border-radius: 12px; cursor: pointer; display: flex; flex-direction: column; gap: 5px;
+    transition: background 0.1s ease; color: #cbd5e1;
+}
+.result-item:hover, .result-item.selected { background: rgba(255, 255, 255, 0.1); color: #fff; }
+.result-title { font-weight: 600; font-size: 1.1rem; }
+.result-tags { font-size: 0.8rem; color: #3b82f6; }
+
+.search-footer {
+    padding: 15px 25px; border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex; gap: 15px; font-size: 0.8rem; color: #64748b; background: rgba(0,0,0,0.2);
+}
