@@ -52,9 +52,22 @@
         <main class="glass-panel content-area">
             <div id="doc-content">
                 <h1>Bienvenue sur mWiki 🚀</h1>
-                <p>Le Hub Digital est prêt. Sélectionne un document dans la sidebar.</p>
+                <p>Le Hub Digital est prêt. Sélectionne un document dans la sidebar ou lance une recherche éclair avec <b>Ctrl+K</b>.</p>
             </div>
         </main>
+    </div>
+
+    <div id="msearch-modal" class="modal-overlay hidden">
+        <div class="glass-panel search-container">
+            <input type="text" id="msearch-input" placeholder="Chercher un document, un tag, une commande..." autocomplete="off">
+            <div id="msearch-results" class="search-results">
+                </div>
+            <div class="search-footer">
+                <span><kbd>↑</kbd> <kbd>↓</kbd> pour naviguer</span>
+                <span><kbd>Clic</kbd> pour ouvrir</span>
+                <span><kbd>Échap</kbd> pour fermer</span>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
