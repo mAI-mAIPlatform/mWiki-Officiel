@@ -1,0 +1,40 @@
+/* Reset et variables */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background-color: #0f172a; color: #fff; overflow: hidden; height: 100vh; }
+
+/* Formes en arrière-plan pour sublimer le Liquid Glass */
+.bg-shape { position: absolute; filter: blur(80px); z-index: -1; }
+.shape1 { width: 400px; height: 400px; background: #3b82f6; top: -100px; left: -100px; border-radius: 50%; opacity: 0.6; }
+.shape2 { width: 300px; height: 300px; background: #8b5cf6; bottom: -50px; right: 100px; border-radius: 50%; opacity: 0.6; }
+
+/* Layout principal */
+.app-container { display: flex; height: 100vh; padding: 20px; gap: 20px; }
+
+/* 🌟 Effet Liquid Glass (Le secret de la sauce) */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar */
+.sidebar { width: 280px; padding: 20px; display: flex; flex-direction: column; gap: 20px; }
+.logo { font-size: 1.5rem; font-weight: bold; }
+.search-bar { 
+    background: rgba(0, 0, 0, 0.2); padding: 10px 15px; border-radius: 10px; 
+    display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 0.9rem;
+}
+kbd { background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; }
+
+/* Navigation */
+nav ul { list-style: none; }
+.category { font-size: 0.8rem; text-transform: uppercase; color: #94a3b8; margin: 15px 0 5px 0; font-weight: bold; }
+nav a { color: #e2e8f0; text-decoration: none; display: block; padding: 8px 10px; border-radius: 8px; transition: 0.3s; }
+nav a:hover { background: rgba(255, 255, 255, 0.1); transform: translateX(5px); }
+
+/* Main Area */
+.content-area { flex: 1; padding: 40px; overflow-y: auto; }
+.content-area h1 { margin-bottom: 20px; }
